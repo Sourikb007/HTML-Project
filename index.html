@@ -64,6 +64,42 @@
   </main>
 
 
+  <dialog id="reserveDialog">
+
+    <form id="reserveForm" novalidate>
+      <h2>Reserve this book</h2>
+      <p id="dialogBook" class="dialog-book"></p>
+
+      <label for="studentName">Student name</label>
+      <input id="studentName" type="text" maxlength="60"
+             placeholder="Full name, e.g. Sourik Biswas" autocomplete="off">
+      <p id="nameError" class="error" role="alert"></p>
+
+      <label for="studentId">Student ID</label>
+      <input id="studentId" type="text" inputmode="numeric" maxlength="8"
+             placeholder="8-digit ID, e.g. 12345678" autocomplete="off">
+      <p id="idError" class="error" role="alert"></p>
+
+      <label for="borrowDays">How many days will you borrow it? (1 to 15)</label>
+      <input id="borrowDays" type="number" min="1" max="15" step="1" value="7">
+      <p id="daysError" class="error" role="alert"></p>
+
+      <p class="hint">The book stays on the shelf for you for 24 hours. Collect it within that time. The borrowing days start from pick-up. Late books cost ₹10 per day.</p>
+
+      <div class="dialog-actions">
+        <button type="button" class="btn ghost" id="cancelBtn">Cancel</button>
+        <button type="submit" class="btn primary">Confirm 24-hour hold</button>
+      </div>
+    </form>
+
+    <div id="successBox" hidden>
+      <h2>Your hold is confirmed</h2>
+      <p id="successText"></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn primary" id="doneBtn">Done</button>
+      </div>
+    </div>
+  </dialog>
 
 
 </body>
